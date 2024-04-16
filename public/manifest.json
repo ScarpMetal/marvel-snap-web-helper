@@ -6,11 +6,17 @@
   "action": {
     "default_popup": "index.html"
   },
+  "background": {
+    "service_worker": "entry-background.js",
+    "type": "module"
+  },
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["content.js"],
+      "js": ["entry-page.js"],
       "run_at": "document_end"
     }
-  ]
+  ],
+  "permissions": ["activeTab", "scripting", "management", "webRequest"],
+  "host_permissions": ["https://*/*"]
 }
