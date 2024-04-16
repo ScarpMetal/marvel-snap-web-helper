@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Marvel Snap Web Helper",
+  "description": "Show additional info for cards referenced in text on a webpage.",
+  "version": "1.0",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
