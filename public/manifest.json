@@ -7,16 +7,16 @@
     "default_popup": "index.html"
   },
   "background": {
-    "service_worker": "entry-background.js",
+    "service_worker": "service-worker.js",
     "type": "module"
   },
   "content_scripts": [
     {
-      "matches": ["*://*/*"],
-      "js": ["entry-page.js"],
+      "matches": ["https://*.reddit.com/r/MarvelSnap/*"],
+      "js": ["content-script.js"],
       "run_at": "document_end"
     }
   ],
-  "permissions": ["activeTab", "scripting", "management", "webRequest"],
+  "permissions": ["activeTab", "scripting", "storage", "webRequest"],
   "host_permissions": ["https://*/*"]
 }

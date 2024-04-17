@@ -7,12 +7,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        popup: "./index.html",
-        page: "./src/page/index.ts",
-        background: "./src/background/index.ts",
+        extension: "./index.html",
+        "content-script": "./src/content-script/index.ts",
+        "service-worker": "./src/service-worker/index.ts",
       },
       output: {
-        entryFileNames: "entry-[name].js",
+        entryFileNames: "[name].js",
       },
     },
   },
