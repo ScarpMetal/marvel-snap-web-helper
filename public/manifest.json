@@ -7,14 +7,22 @@
     "default_popup": "index.html"
   },
   "background": {
-    "service_worker": "service-worker.js",
+    "service_worker": "assets/service-worker.js",
     "type": "module"
   },
   "content_scripts": [
     {
       "matches": ["https://*.reddit.com/r/MarvelSnap/*"],
-      "js": ["content-script.js"],
+      "js": ["assets/content-script.js"],
+      "css": ["assets/content-script.css"],
       "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/content-script.css", "assets/card-background.webp"],
+      "matches": ["https://*/*"],
+      "use_dynamic_resources": true
     }
   ],
   "permissions": ["activeTab", "scripting", "storage", "webRequest"],

@@ -4,6 +4,7 @@ import { defineConfig } from "vite";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: "chrome-extension://__MSG_@@extension_id__/",
   build: {
     rollupOptions: {
       input: {
@@ -12,7 +13,8 @@ export default defineConfig({
         "service-worker": "./src/service-worker/index.ts",
       },
       output: {
-        entryFileNames: "[name].js",
+        entryFileNames: "assets/[name].js",
+        assetFileNames: "assets/[name].[ext]",
       },
     },
   },

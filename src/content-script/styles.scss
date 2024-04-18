@@ -1,0 +1,34 @@
+.mswh-card {
+  position: relative;
+  border-bottom: dashed 1px #060606;
+}
+
+.mswh-card-preview {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  text-align: center;
+  color: white;
+  font-size: 1em;
+  font-weight: normal;
+  z-index: 100;
+  padding: 2em 1em;
+  border-radius: 0.5em;
+  background-color: #333;
+  background: url("chrome-extension://__MSG_@@extension_id__/assets/card-background.webp");
+
+  &[data-show] {
+    display: flex;
+  }
+
+  img {
+    display: block;
+    margin-bottom: 0.5em;
+    width: 100%;
+  }
+
+  div {
+    width: 200px;
+  }
+}
