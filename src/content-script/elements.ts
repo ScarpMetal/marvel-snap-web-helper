@@ -35,9 +35,9 @@ function generateCardPreview(card: Card) {
   });
 }
 
-function generateAbilityText(ability: string) {
+function generateAbilityText(ability?: string) {
   return ability
-    .replace("On Reveal:", wrapElement("b", { children: "On Reveal:" }))
+    ?.replace("On Reveal:", wrapElement("b", { children: "On Reveal:" }))
     .replace("Ongoing:", wrapElement("b", { children: "Ongoing:" }));
 }
 

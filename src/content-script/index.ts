@@ -53,13 +53,13 @@ async function run() {
     log("Added popper to card");
 
     cardEl.addEventListener("mouseenter", () => {
-      log("Mouse entered card");
+      // log("Mouse entered card");
       previewEl.setAttribute("data-show", "");
       popper.update();
     });
 
     cardEl.addEventListener("mouseleave", () => {
-      log("Mouse left card");
+      // log("Mouse left card");
       previewEl.removeAttribute("data-show");
     });
   });

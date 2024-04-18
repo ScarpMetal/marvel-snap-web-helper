@@ -25,8 +25,14 @@ export async function getCards(): Promise<Card[]> {
           ) {
             log("Cache malformed, clearing");
             localStorage.removeItem("card-data");
+          } else {
+            const cards = localCardData.cards;
+
+            // Sort cards by name length so that longer names get matched first
+            cards.sort((a, b) => b.name.localeCompare(a.name));
+
+            return cards;
           }
-          return localCardData.cards;
         } else {
           log(
             `Card data was fetched ${fetchedXDaysAgo} days ago. Fetching new card data.`

@@ -11,9 +11,12 @@ export async function getCards(): Promise<Card[]> {
     log("Fetch response received");
 
     const json = await res.json();
-
-    cards = json.card;
     log("Card response contains valid JSON");
+    cards = json.card;
+
+    // Sort cards by name length so that longer names get matched first
+    cards.sort((a, b) => b.name.localeCompare(a.name));
+    log("Sorted cards by name length");
   } catch (e) {
     log(e);
   }
